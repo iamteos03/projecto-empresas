@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "Cadastro de Empresas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "base_url", "value": "http://127.0.0.1:8000" }],
+  "item": [
+    {
+      "name": "Criar empresa (POST)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Empresa Exemplo Lda\",\n  \"nif\": \"5417000000\",\n  \"telefone\": \"923000000\",\n  \"cidade\": \"Luanda\"\n}" },
+        "url": { "raw": "{{base_url}}/empresas", "host": ["{{base_url}}"], "path": ["empresas"] }
+      }
+    },
+    {
+      "name": "Listar empresas (GET)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/empresas", "host": ["{{base_url}}"], "path": ["empresas"] }
+      }
+    },
+    {
+      "name": "Obter uma empresa (GET)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/empresas/1", "host": ["{{base_url}}"], "path": ["empresas", "1"] }
+      }
+    },
+    {
+      "name": "Atualizar empresa (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Empresa Exemplo SA\",\n  \"nif\": \"5417000000\",\n  \"telefone\": \"924000000\",\n  \"cidade\": \"Benguela\"\n}" },
+        "url": { "raw": "{{base_url}}/empresas/1", "host": ["{{base_url}}"], "path": ["empresas", "1"] }
+      }
+    },
+    {
+      "name": "Apagar empresa (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{base_url}}/empresas/1", "host": ["{{base_url}}"], "path": ["empresas", "1"] }
+      }
+    }
+  ]
+}
